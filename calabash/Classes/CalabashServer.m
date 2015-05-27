@@ -33,6 +33,7 @@
 #import "LPInfoPlist.h"
 #import "LPPluginLoader.h"
 #import "LPWKWebViewRuntimeLoader.h"
+#import "LPRecorderAllRoute.h"
 
 @interface CalabashServer ()
 - (void) start;
@@ -167,6 +168,10 @@
     LPDumpRoute *dumpRoute = [LPDumpRoute new];
     [LPRouter addRoute:dumpRoute forPath:@"dump"];
     [dumpRoute release];
+
+    LPRecorderAllRoute *recorderAllRoute = [LPRecorderAllRoute new];
+    [LPRouter addRoute:recorderAllRoute forPath:@"recorderAll"];
+    [recorderAllRoute release];
 
     _httpServer = [[[LPHTTPServer alloc] init] retain];
 
