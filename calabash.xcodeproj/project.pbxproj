@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1B8B4B41B15479900B5EF53 /* LPRecorderAllRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4B31B15479900B5EF53 /* LPRecorderAllRoute.m */; };
+		A1B8B4B51B15479900B5EF53 /* LPRecorderAllRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4B31B15479900B5EF53 /* LPRecorderAllRoute.m */; };
+		A1B8B4B71B1547D700B5EF53 /* LPRecorderAllRoute.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B8B4B61B1547D700B5EF53 /* LPRecorderAllRoute.h */; };
+		A1B8B4B81B1547D700B5EF53 /* LPRecorderAllRoute.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B8B4B61B1547D700B5EF53 /* LPRecorderAllRoute.h */; };
+		A1B8B4BA1B1548D500B5EF53 /* LPTouchRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4B91B1548D500B5EF53 /* LPTouchRecorder.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A1B8B4BB1B1548D500B5EF53 /* LPTouchRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4B91B1548D500B5EF53 /* LPTouchRecorder.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A1B8B4BE1B154E5600B5EF53 /* UIApplication-Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4BD1B154E5600B5EF53 /* UIApplication-Recorder.m */; };
+		A1B8B4BF1B154E5600B5EF53 /* UIApplication-Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4BD1B154E5600B5EF53 /* UIApplication-Recorder.m */; };
+		A1B8B4C31B15505000B5EF53 /* UIViewController-Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4C21B15505000B5EF53 /* UIViewController-Recorder.m */; };
+		A1B8B4C41B15505000B5EF53 /* UIViewController-Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4C21B15505000B5EF53 /* UIViewController-Recorder.m */; };
+		A1B8B4C61B16470300B5EF53 /* UIViewController-Recorder.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B8B4C51B1646FC00B5EF53 /* UIViewController-Recorder.h */; };
+		A1B8B4C71B16470400B5EF53 /* UIViewController-Recorder.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B8B4C51B1646FC00B5EF53 /* UIViewController-Recorder.h */; };
+		A1B8B4C81B1661B100B5EF53 /* LPTouchRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B8B4BC1B1548F600B5EF53 /* LPTouchRecorder.h */; };
+		A1B8B4C91B1661B200B5EF53 /* LPTouchRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B8B4BC1B1548F600B5EF53 /* LPTouchRecorder.h */; };
+		A1B8B4CA1B1661B800B5EF53 /* UIApplication-Recorder.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B8B4C01B154EC800B5EF53 /* UIApplication-Recorder.h */; };
+		A1B8B4CB1B1661B800B5EF53 /* UIApplication-Recorder.h in Headers */ = {isa = PBXBuildFile; fileRef = A1B8B4C01B154EC800B5EF53 /* UIApplication-Recorder.h */; };
+		A1B8B4CC1B16777300B5EF53 /* LPRecorderAllRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4B31B15479900B5EF53 /* LPRecorderAllRoute.m */; };
+		A1B8B4CD1B16777300B5EF53 /* LPTouchRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4B91B1548D500B5EF53 /* LPTouchRecorder.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		A1B8B4CE1B16777300B5EF53 /* UIApplication-Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4BD1B154E5600B5EF53 /* UIApplication-Recorder.m */; };
+		A1B8B4CF1B16777300B5EF53 /* UIViewController-Recorder.m in Sources */ = {isa = PBXBuildFile; fileRef = A1B8B4C21B15505000B5EF53 /* UIViewController-Recorder.m */; };
 		B1058E08197F00C000B4A57B /* LPUIAUserPrefsChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F279AE183D5B3000A922BC /* LPUIAUserPrefsChannel.m */; };
 		B1058E1D197F00C000B4A57B /* UIScriptASTPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E3603914D9F4B30087D8D9 /* UIScriptASTPredicate.m */; };
 		B1058E1E197F00C000B4A57B /* UIScriptAST.m in Sources */ = {isa = PBXBuildFile; fileRef = B184FDFA14B6DB2B002A744C /* UIScriptAST.m */; };
@@ -845,6 +865,14 @@
 		5BFF97A718B392370094E71E /* LPScrollToMarkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPScrollToMarkOperation.m; sourceTree = "<group>"; };
 		692D779E1657010000DE3E53 /* LPExitRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPExitRoute.h; sourceTree = "<group>"; };
 		692D779F1657010000DE3E53 /* LPExitRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPExitRoute.m; sourceTree = "<group>"; };
+		A1B8B4B31B15479900B5EF53 /* LPRecorderAllRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPRecorderAllRoute.m; path = Recorder/LPRecorderAllRoute.m; sourceTree = "<group>"; };
+		A1B8B4B61B1547D700B5EF53 /* LPRecorderAllRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPRecorderAllRoute.h; path = Recorder/LPRecorderAllRoute.h; sourceTree = "<group>"; };
+		A1B8B4B91B1548D500B5EF53 /* LPTouchRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPTouchRecorder.m; path = Recorder/LPTouchRecorder.m; sourceTree = "<group>"; };
+		A1B8B4BC1B1548F600B5EF53 /* LPTouchRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LPTouchRecorder.h; path = Recorder/LPTouchRecorder.h; sourceTree = "<group>"; };
+		A1B8B4BD1B154E5600B5EF53 /* UIApplication-Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication-Recorder.m"; path = "Recorder/UIApplication-Recorder.m"; sourceTree = "<group>"; };
+		A1B8B4C01B154EC800B5EF53 /* UIApplication-Recorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIApplication-Recorder.h"; path = "Recorder/UIApplication-Recorder.h"; sourceTree = "<group>"; };
+		A1B8B4C21B15505000B5EF53 /* UIViewController-Recorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController-Recorder.m"; path = "Recorder/UIViewController-Recorder.m"; sourceTree = "<group>"; };
+		A1B8B4C51B1646FC00B5EF53 /* UIViewController-Recorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIViewController-Recorder.h"; path = "Recorder/UIViewController-Recorder.h"; sourceTree = "<group>"; };
 		B1058E51197F00C000B4A57B /* libFrankCalabash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFrankCalabash.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1058E78197F043100B4A57B /* LPCalabashFrankRegistrar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LPCalabashFrankRegistrar.h; path = Frank/LPCalabashFrankRegistrar.h; sourceTree = "<group>"; };
 		B1058E79197F043100B4A57B /* LPCalabashFrankRegistrar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LPCalabashFrankRegistrar.m; path = Frank/LPCalabashFrankRegistrar.m; sourceTree = "<group>"; };
@@ -1258,6 +1286,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1B8B4B21B15466300B5EF53 /* Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8B4B31B15479900B5EF53 /* LPRecorderAllRoute.m */,
+				A1B8B4B61B1547D700B5EF53 /* LPRecorderAllRoute.h */,
+				A1B8B4B91B1548D500B5EF53 /* LPTouchRecorder.m */,
+				A1B8B4BC1B1548F600B5EF53 /* LPTouchRecorder.h */,
+				A1B8B4BD1B154E5600B5EF53 /* UIApplication-Recorder.m */,
+				A1B8B4C01B154EC800B5EF53 /* UIApplication-Recorder.h */,
+				A1B8B4C21B15505000B5EF53 /* UIViewController-Recorder.m */,
+				A1B8B4C51B1646FC00B5EF53 /* UIViewController-Recorder.h */,
+			);
+			name = Recorder;
+			sourceTree = "<group>";
+		};
 		B1058E77197F03F400B4A57B /* Frank */ = {
 			isa = PBXGroup;
 			children = (
@@ -1386,6 +1429,7 @@
 		B184FD8514B6DACA002A744C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A1B8B4B21B15466300B5EF53 /* Recorder */,
 				B1058E77197F03F400B4A57B /* Frank */,
 				F5E2D1D818C9120E00A0D9B6 /* SSKeychain */,
 				B1FF22B115CF002500F3A17B /* MapKit */,
@@ -2043,6 +2087,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1FBBC6119D0070000EE03CE /* LPDevice.h in Headers */,
+				A1B8B4C81B1661B100B5EF53 /* LPTouchRecorder.h in Headers */,
 				B1F772001A22A35A009A2336 /* LPUIARouteOverSharedElement.h in Headers */,
 				B13B7FBF1A31FE560054FFB1 /* LPDumpRoute.h in Headers */,
 				B1F772281A22A398009A2336 /* LPUIASharedElementChannel.h in Headers */,
@@ -2051,6 +2096,8 @@
 				F5091C2F18C4E1D700C85307 /* CalabashServer.h in Headers */,
 				F59C5CF818E0BB1A0087B51D /* LPRoute.h in Headers */,
 				F59C5CF918E0BB290087B51D /* LPRouter.h in Headers */,
+				A1B8B4B71B1547D700B5EF53 /* LPRecorderAllRoute.h in Headers */,
+				A1B8B4CA1B1661B800B5EF53 /* UIApplication-Recorder.h in Headers */,
 				F5C0944D1A979CC200AE5991 /* LPWebQuery.h in Headers */,
 				F55185581AC3875200CE06DC /* LPWebViewProtocol.h in Headers */,
 				F55185591AC3875900CE06DC /* UIWebView+LPWebView.h in Headers */,
@@ -2060,6 +2107,7 @@
 				F59C5CFB18E0BBAE0087B51D /* LPHTTPAsyncFileResponse.h in Headers */,
 				F59C5CFC18E0BBAE0087B51D /* LPHTTPDataResponse.h in Headers */,
 				F59C5CFD18E0BBAE0087B51D /* LPHTTPDynamicFileResponse.h in Headers */,
+				A1B8B4C61B16470300B5EF53 /* UIViewController-Recorder.h in Headers */,
 				F59C5CFE18E0BBAE0087B51D /* LPHTTPFileResponse.h in Headers */,
 				F537397418E52014004133FA /* LPVersionRoute.h in Headers */,
 			);
@@ -2070,6 +2118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1FBBC6219D0070000EE03CE /* LPDevice.h in Headers */,
+				A1B8B4C91B1661B200B5EF53 /* LPTouchRecorder.h in Headers */,
 				B1F772011A22A35A009A2336 /* LPUIARouteOverSharedElement.h in Headers */,
 				F5821A4D18C4E27400293508 /* CalabashServer.h in Headers */,
 				F59C5D0118E0C1D60087B51D /* LPRoute.h in Headers */,
@@ -2078,6 +2127,8 @@
 				B1F7720D1A22A35A009A2336 /* LPUIATapRouteOverSharedElement.h in Headers */,
 				F59C5D0218E0C1D90087B51D /* LPRouter.h in Headers */,
 				F5C0944E1A979CC200AE5991 /* LPWebQuery.h in Headers */,
+				A1B8B4B81B1547D700B5EF53 /* LPRecorderAllRoute.h in Headers */,
+				A1B8B4CB1B1661B800B5EF53 /* UIApplication-Recorder.h in Headers */,
 				B1F7721D1A22A398009A2336 /* LPSharedUIATextField.h in Headers */,
 				F551855B1AC3876F00CE06DC /* LPWebViewProtocol.h in Headers */,
 				F551855C1AC3876F00CE06DC /* UIWebView+LPWebView.h in Headers */,
@@ -2087,6 +2138,7 @@
 				F59C5D0518E0C1EA0087B51D /* LPHTTPDataResponse.h in Headers */,
 				F59C5D0418E0C1E60087B51D /* LPHTTPAsyncFileResponse.h in Headers */,
 				F59C5D0618E0C1EF0087B51D /* LPHTTPDynamicFileResponse.h in Headers */,
+				A1B8B4C71B16470400B5EF53 /* UIViewController-Recorder.h in Headers */,
 				F59C5D0718E0C1F30087B51D /* LPHTTPFileResponse.h in Headers */,
 				F537397318E5200C004133FA /* LPVersionRoute.h in Headers */,
 			);
@@ -2867,6 +2919,7 @@
 				B1F772061A22A35A009A2336 /* LPUIARouteOverSharedElement.m in Sources */,
 				F5091BFA18C4E1D700C85307 /* LPInterpolateRoute.m in Sources */,
 				F5091BFB18C4E1D700C85307 /* LPRecordRoute.m in Sources */,
+				A1B8B4BE1B154E5600B5EF53 /* UIApplication-Recorder.m in Sources */,
 				F5C094531A979CC200AE5991 /* LPWebQuery.m in Sources */,
 				F5091BFC18C4E1D700C85307 /* LPMapRoute.m in Sources */,
 				F5091BFD18C4E1D700C85307 /* LPNoContentResponse.m in Sources */,
@@ -2894,15 +2947,18 @@
 				B13B7FC01A31FE560054FFB1 /* LPDumpRoute.m in Sources */,
 				F5091C1118C4E1D700C85307 /* UIScriptASTWith.m in Sources */,
 				F5E2D1E018C9120E00A0D9B6 /* LPSSKeychain.m in Sources */,
+				A1B8B4B41B15479900B5EF53 /* LPRecorderAllRoute.m in Sources */,
 				F5091C1218C4E1D700C85307 /* UIScriptParser.m in Sources */,
 				F5091C1318C4E1D700C85307 /* LPJSONUtils.m in Sources */,
 				F55D412418C9130100813F78 /* LPKeychainRoute.m in Sources */,
 				F5091C1418C4E1D700C85307 /* LPTouchUtils.m in Sources */,
 				F5F600491A7C69760020637D /* LPInvoker.m in Sources */,
 				F5091C1518C4E1D700C85307 /* LPCDataScanner.m in Sources */,
+				A1B8B4BA1B1548D500B5EF53 /* LPTouchRecorder.m in Sources */,
 				F5543F2B1ABF7DE900E1A0BF /* LPPluginLoader.m in Sources */,
 				F5091C1718C4E1D700C85307 /* LPI.mm in Sources */,
 				B1F772221A22A398009A2336 /* LPSharedUIATextField.m in Sources */,
+				A1B8B4C31B15505000B5EF53 /* UIViewController-Recorder.m in Sources */,
 				F5091C1818C4E1D700C85307 /* LPReflectUtils.m in Sources */,
 				B1FBBC5B19D0070000EE03CE /* LPDevice.m in Sources */,
 				F5091C1918C4E1D700C85307 /* LPISO8601DateFormatter.m in Sources */,
@@ -2966,16 +3022,19 @@
 				F5C224E11AD473F0001DB4FA /* LPInfoPlistTest.m in Sources */,
 				F50CBF9D1A040599004AC9DA /* LPScrollToMarkOperation.m in Sources */,
 				B15369FC1A32620A0093923F /* LPUIASharedElementChannel.m in Sources */,
+				A1B8B4CE1B16777300B5EF53 /* UIApplication-Recorder.m in Sources */,
 				F50CBFCA1A0405E9004AC9DA /* LPLog.m in Sources */,
 				F50CBF8B1A04056F004AC9DA /* LPHTTPDynamicFileResponse.m in Sources */,
 				F5C224E31AD473F0001DB4FA /* LPTouchUtilsTest.m in Sources */,
 				F5C224DB1AD472B1001DB4FA /* LPInvokerTest.m in Sources */,
+				A1B8B4CF1B16777300B5EF53 /* UIViewController-Recorder.m in Sources */,
 				B1670E2E1A32411100000A62 /* LPDumpRoute.m in Sources */,
 				F50CBFA51A0405B2004AC9DA /* LPUIATapRoute.m in Sources */,
 				F50CBFA41A0405B2004AC9DA /* LPQueryLogRoute.m in Sources */,
 				F50CBFC11A0405CE004AC9DA /* UIScriptASTIndex.m in Sources */,
 				F50CBFCB1A0405E9004AC9DA /* LPCDataScanner.m in Sources */,
 				F5A33A711AC01BC400224639 /* WKWebView+LPWebViewTest.m in Sources */,
+				A1B8B4CD1B16777300B5EF53 /* LPTouchRecorder.m in Sources */,
 				F5C224DA1AD472B1001DB4FA /* InvokerFactory.m in Sources */,
 				F5F2D5E01ACAC3B60027937B /* LPIsWebViewTest.m in Sources */,
 				F5C224EA1AD47403001DB4FA /* LPScreenshotRouteTest.m in Sources */,
@@ -3038,6 +3097,7 @@
 				F50CBFCC1A0405E9004AC9DA /* CalabashServer.m in Sources */,
 				F50CBF821A040564004AC9DA /* LPHTTPAuthenticationRequest.m in Sources */,
 				F50CBFC81A0405E9004AC9DA /* LPReflectUtils.m in Sources */,
+				A1B8B4CC1B16777300B5EF53 /* LPRecorderAllRoute.m in Sources */,
 				F5C224EB1AD47403001DB4FA /* LPVersionRouteTest.m in Sources */,
 				F50CBF931A04058C004AC9DA /* LPDatePickerOperation.m in Sources */,
 				F50CBFC51A0405E9004AC9DA /* LPDevice.m in Sources */,
@@ -3094,6 +3154,7 @@
 				B1F772071A22A35A009A2336 /* LPUIARouteOverSharedElement.m in Sources */,
 				F5821A1818C4E27400293508 /* LPInterpolateRoute.m in Sources */,
 				F5821A1918C4E27400293508 /* LPRecordRoute.m in Sources */,
+				A1B8B4BF1B154E5600B5EF53 /* UIApplication-Recorder.m in Sources */,
 				F5C094541A979CC200AE5991 /* LPWebQuery.m in Sources */,
 				F5821A1A18C4E27400293508 /* LPMapRoute.m in Sources */,
 				F5821A1B18C4E27400293508 /* LPNoContentResponse.m in Sources */,
@@ -3121,15 +3182,18 @@
 				B1670E291A32410D00000A62 /* LPDumpRoute.m in Sources */,
 				F5821A2F18C4E27400293508 /* UIScriptASTWith.m in Sources */,
 				F5E2D1E118C9120E00A0D9B6 /* LPSSKeychain.m in Sources */,
+				A1B8B4B51B15479900B5EF53 /* LPRecorderAllRoute.m in Sources */,
 				F5821A3018C4E27400293508 /* UIScriptParser.m in Sources */,
 				F5821A3118C4E27400293508 /* LPJSONUtils.m in Sources */,
 				F55D412518C9130100813F78 /* LPKeychainRoute.m in Sources */,
 				F5821A3218C4E27400293508 /* LPTouchUtils.m in Sources */,
 				F5F6004A1A7C69760020637D /* LPInvoker.m in Sources */,
 				F5821A3318C4E27400293508 /* LPCDataScanner.m in Sources */,
+				A1B8B4BB1B1548D500B5EF53 /* LPTouchRecorder.m in Sources */,
 				F5543F2C1ABF7DE900E1A0BF /* LPPluginLoader.m in Sources */,
 				F5821A3518C4E27400293508 /* LPI.mm in Sources */,
 				B1F772231A22A398009A2336 /* LPSharedUIATextField.m in Sources */,
+				A1B8B4C41B15505000B5EF53 /* UIViewController-Recorder.m in Sources */,
 				F5821A3618C4E27400293508 /* LPReflectUtils.m in Sources */,
 				B1FBBC5C19D0070000EE03CE /* LPDevice.m in Sources */,
 				F5821A3718C4E27400293508 /* LPISO8601DateFormatter.m in Sources */,
