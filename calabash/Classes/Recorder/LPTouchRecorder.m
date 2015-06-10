@@ -44,12 +44,21 @@
 - (void) handleTextFieldDidChangeNotification:(NSNotification *) aNotification {
   UITextField *textField = (UITextField *)aNotification.object;
   CGPoint center = textField.center;
-  NSMutableDictionary *event = [self CreateTouchEvent:textField withTapCount:0 atLocation:center];
-  [event setValue:textField.nextResponder forKey:@"NextResponder"];
-  [event setValue:textField.text forKey:@"Text"];
-  [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
-  [event setValue:@(AppEventTypeTextEntry) forKey:@"EventType"];
-  [self AddItem:event];
+  if ([textField.text length] == 0) {
+    NSMutableDictionary *event = [self CreateTouchEvent:textField withTapCount:0 atLocation:center];
+    [event setValue:textField.nextResponder forKey:@"NextResponder"];
+    [event setValue:textField.text forKey:@"Text"];
+    [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
+    [event setValue:@(AppEventTypeClearText) forKey:@"EventType"];
+    [self AddItem:event];
+  } else {
+    NSMutableDictionary *event = [self CreateTouchEvent:textField withTapCount:0 atLocation:center];
+    [event setValue:textField.nextResponder forKey:@"NextResponder"];
+    [event setValue:textField.text forKey:@"Text"];
+    [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
+    [event setValue:@(AppEventTypeTextEntry) forKey:@"EventType"];
+    [self AddItem:event];
+  }
 }
 
 - (NSArray *)Items
