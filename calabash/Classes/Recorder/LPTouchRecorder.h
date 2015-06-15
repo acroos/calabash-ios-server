@@ -32,7 +32,8 @@ typedef enum
   AppEventTypeNavigation,
   AppEventTypeTextEntry,
   AppLoaded,
-  AppRotation
+  AppRotation,
+  AppEventTypeClearText = 8
 
 } AppEventType;
 
