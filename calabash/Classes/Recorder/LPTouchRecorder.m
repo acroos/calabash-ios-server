@@ -18,6 +18,9 @@
 @synthesize startTouchTime = _startTouchTime;
 @synthesize items = _items;
 @synthesize lastTouch = _lastTouch;
+@synthesize textEntered = _textEntered;
+@synthesize currentTextEntered = _currentTextEntered;
+@synthesize currentTextEvent = _currentTextEvent;
 
 + (LPTouchRecorder *) sharedRecorder {
   static LPTouchRecorder *shared = nil;
@@ -31,33 +34,54 @@
 - (id) init_private {
   self = [super init];
   if (self) {
+    _textEntered = NO;
+    _currentTextEntered = [[NSString alloc] init];
+    _currentTextEvent = [NSMutableDictionary dictionary];
     _items = [NSMutableArray array];
 
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didShowViewControllerNotification:) name:@"UINavigationControllerDidShowViewControllerNotification" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationChanged:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTextFieldDidChangeNotification:) name:UITextFieldTextDidEndEditingNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTextFieldDidChangeNotification:) name:UITextFieldTextDidChangeNotification object:nil];
   }
   return self;
 }
 
-- (void) handleTextFieldDidChangeNotification:(NSNotification *) aNotification {
+- (void) shouldSendTextEntry
+{
   @try {
-  UITextField *textField = (UITextField *)aNotification.object;
-  CGPoint center = textField.center;
-  if ([textField.text length] == 0) {
-    NSMutableDictionary *event = [self CreateTouchEvent:textField withTapCount:0 atLocation:center];
-    [event setValue:textField.text forKey:@"Text"];
-    [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
-    [event setValue:@(AppEventTypeClearText) forKey:@"EventType"];
-    [self AddItem:event];
-  } else {
-    NSMutableDictionary *event = [self CreateTouchEvent:textField withTapCount:0 atLocation:center];
-    [event setValue:textField.text forKey:@"Text"];
-    [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
-    [event setValue:@(AppEventTypeTextEntry) forKey:@"EventType"];
-    [self AddItem:event];
-  } } @catch (NSException *exception) { NSLog(@"Text Change Exception - %@", exception.reason);}
+    if ([_currentTextEntered length] > 0)
+    {
+      [self AddItem:_currentTextEvent];
+      _currentTextEvent = nil;
+      _currentTextEntered = @"";
+    } else if (_textEntered) {
+      [_currentTextEvent setValue:@(AppEventTypeClearText) forKey:@"EventType"];
+      [self AddItem:_currentTextEvent];
+      _currentTextEvent = nil;
+      _textEntered = NO;
+    }
+  } @catch(NSException *exception) {
+    NSLog(@"Failed checking text entry %@", exception.reason);
+  }
+}
+
+- (void) handleTextFieldDidChangeNotification:(NSNotification *) aNotification {
+    @try {
+      UITextField *textField = (UITextField *)aNotification.object;
+      CGPoint center = textField.center;
+      _currentTextEntered = textField.text;
+      NSMutableDictionary *event = [self CreateTouchEvent:textField withTapCount:0 atLocation:center];
+      [event setValue:textField.text forKey:@"Text"];
+      [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
+      [event setValue:@(AppEventTypeTextEntry) forKey:@"EventType"];
+      _currentTextEvent = event;
+      if ([textField hasText]) {
+        _textEntered = YES;
+      }
+    } @catch(NSException *exception) {
+        NSLog(@"Failed in text field change notification %@", exception.reason);
+    }
 }
 
 - (NSArray *)Items
@@ -150,6 +174,7 @@
   @try {
     if (event.type == UIEventTypeTouches) {
       // NSLog(@"Touch event");
+      [self shouldSendTextEntry];
       NSSet *allTouches = [event allTouches];
       UITouch *touch = [allTouches anyObject];
       UIView *touchView = touch.view;
