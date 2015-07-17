@@ -10,31 +10,21 @@
 
 typedef enum
 {
-  GestureTypeTap,
-  GestureTypeLongPress,
-  GestureTypeSwipeRight,
-  GestureTypeSwipeLeft,
-  GestureTypeSwipeUp,
-  GestureTypeSwipeDown,
-  GestureTypePinchIn,
-  GestureTypePinchOut,
-  GestureTypeViewAppeared,
-  GestureTypeBackButtonPressed,
-  GestureTypePortrait,
-  GestureTypePortraitUpsideDown,
-  GestureTypeLandscapeLeft,
-  GestureTypeLandscapeRight,
-} GestureType;
-
-typedef enum
-{
-  AppEventTypeTouch,
-  AppEventTypeNavigation,
-  AppEventTypeTextEntry,
-  AppLoaded,
-  AppRotation,
-  AppEventTypeClearText = 8
-
+  AppEventTypeTap = 0,
+  AppEventTypeLongPress,
+  AppEventTypeDoubleTap,
+  AppEventTypeSwipeLeft,
+  AppEventTypeSwipeRight,
+  AppEventTypeScrollUp,
+  AppEventTypeScrollDown,
+  AppEventTypeBackButtonPressed,
+  AppEventTypeMenuButtonPressed,
+  AppEventTypeEnterKeyPressed,
+  AppEventTypeOrientationPortrait,
+  AppEventTypeOrientationLandscape,
+  AppEventTypeEnterText,
+  AppEventTypeClearText,
+  AppEventTypeScreenshot
 } AppEventType;
 
 @interface LPTouchRecorder : NSObject
@@ -47,7 +37,7 @@ typedef enum
 @property(assign, nonatomic) double startTouchTime;
 @property(strong, nonatomic) NSMutableArray *items;
 @property(strong, nonatomic) Class lastTouch;
-@property(nonatomic) BOOL textEntered;
+@property(assign, nonatomic) BOOL textEntered;
 @property(strong, nonatomic) NSString *currentTextEntered;
 @property(strong, nonatomic) NSMutableDictionary *currentTextEvent;
 

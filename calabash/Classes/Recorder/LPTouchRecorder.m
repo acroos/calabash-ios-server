@@ -74,7 +74,7 @@
       NSMutableDictionary *event = [self CreateTouchEvent:textField withTapCount:0 atLocation:center];
       [event setValue:textField.text forKey:@"Text"];
       [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
-      [event setValue:@(AppEventTypeTextEntry) forKey:@"EventType"];
+      [event setValue:@(AppEventTypeEnterText) forKey:@"EventType"];
       _currentTextEvent = event;
       if ([textField hasText]) {
         _textEntered = YES;
@@ -100,15 +100,15 @@
 {
   UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
   _lastTouch = nil;
-  GestureType type;
+  AppEventType type;
   if(orientation == UIInterfaceOrientationLandscapeLeft) {
-    type = GestureTypeLandscapeLeft;
+    type = AppEventTypeOrientationLandscape;
   } else if(orientation == UIInterfaceOrientationLandscapeRight) {
-    type = GestureTypeLandscapeRight;
+    type = AppEventTypeOrientationLandscape;
   }else if(orientation == UIInterfaceOrientationPortrait) {
-    type = GestureTypePortrait;
+    type = AppEventTypeOrientationPortrait;
   }else {
-    type = GestureTypePortraitUpsideDown;
+    type = AppEventTypeOrientationPortrait;
   }
   if (UIInterfaceOrientationIsLandscape(orientation))
   {
@@ -120,9 +120,7 @@
 
 
   NSMutableDictionary *event = [NSMutableDictionary dictionary];
-  [event setValue:@(AppRotation) forKey:@"EventType"];
-
-  [event setValue:@(type) forKey:@"GestureType"];
+  [event setValue:@(type) forKey:@"EventType"];
   [_items addObject:event];
 }
 
@@ -133,7 +131,7 @@
       // back button was pressed.  We know this is true because self is no longer
       // in the navigation stack.
       NSMutableDictionary *event = [self CreateNavigationEvent:viewController];
-      [event setValue:@(GestureTypeBackButtonPressed) forKey:@"GestureType"];
+      [event setValue:@(AppEventTypeBackButtonPressed) forKey:@"EventType"];
       [_items addObject:event];
     }
   }
@@ -160,7 +158,7 @@
     }
     if(![parent isEqual:viewController.parentViewController] && isBack){
       NSMutableDictionary *event = [self CreateNavigationEvent:viewController];
-      [event setValue:@(GestureTypeBackButtonPressed) forKey:@"GestureType"];
+      [event setValue:@(AppEventTypeBackButtonPressed) forKey:@"EventType"];
       [_items addObject:event];
       _lastTouch = nil;
     }
@@ -173,7 +171,6 @@
 - (void) sendEvent:(UIEvent *)event {
   @try {
     if (event.type == UIEventTypeTouches) {
-      // NSLog(@"Touch event");
       [self shouldSendTextEntry];
       NSSet *allTouches = [event allTouches];
       UITouch *touch = [allTouches anyObject];
@@ -202,10 +199,10 @@
             fabs(_startTouchPosition1.x - currentTouchPosition.x) > fabs(_startTouchPosition1.y - currentTouchPosition.y) &&
             touch.timestamp - _startTouchTime < 0.7) {
           if (_startTouchPosition1.x < currentTouchPosition.x) {
-            [touchEvent setValue:@((GestureTypeSwipeRight)) forKey:@"GestureType"];
+            [touchEvent setValue:@((AppEventTypeSwipeRight)) forKey:@"EventType"];
           }
           else {
-            [touchEvent setValue:@((GestureTypeSwipeLeft)) forKey:@"GestureType"];
+            [touchEvent setValue:@((AppEventTypeSwipeLeft)) forKey:@"EventType"];
           }
           //Create Touch horizontal swipe
         } else if (fabs(_startTouchPosition1.y - currentTouchPosition.y) >= 10.0 &&
@@ -213,14 +210,14 @@
                    touch.timestamp - _startTouchTime < 0.7) {
           //Create Touch vertical swipe
           if (_startTouchPosition1.y < currentTouchPosition.y)
-            [touchEvent setValue:@(GestureTypeSwipeDown) forKey:@"GestureType"];
+            [touchEvent setValue:@(AppEventTypeScrollUp) forKey:@"EventType"];
           else
-            [touchEvent setValue:@(GestureTypeSwipeUp) forKey:@"GestureType"];
+            [touchEvent setValue:@(AppEventTypeScrollDown) forKey:@"EventType"];
         } else {
           if (((double) touch.timestamp - _startTouchTime) > 1)
-            [touchEvent setValue:@(GestureTypeLongPress) forKey:@"GestureType"];
+            [touchEvent setValue:@(AppEventTypeLongPress) forKey:@"EventType"];
           else
-            [touchEvent setValue:@(GestureTypeTap) forKey:@"GestureType"];
+            [touchEvent setValue:@(AppEventTypeTap) forKey:@"EventType"];
         }
 
 
@@ -262,7 +259,7 @@
   {
     UIViewController *viewController = [[notification userInfo] objectForKey:@"UINavigationControllerNextVisibleViewController"];
     NSMutableDictionary *event = [self CreateNavigationEvent:viewController];
-    [event setValue:@(GestureTypeViewAppeared) forKey:@"GestureType"];
+    [event setValue:@(AppEventTypeScreenshot) forKey:@"EventType"];
     [_items addObject:event];
   }
   @catch (NSException *exception) {
@@ -275,7 +272,6 @@
     NSString* className = NSStringFromClass([viewController class]);
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     [dictionary setValue:className forKey:@"ClassType"];
-    [dictionary setValue:@(AppEventTypeNavigation) forKey:@"EventType"];
     NSString *id = [self GetIdForViewController:viewController];
     if(id.length > 0) {
       [dictionary setValue:id forKey:@"Id"];
@@ -313,7 +309,7 @@
 
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     [dictionary setValue:className forKey:@"ClassType"];
-    [dictionary setValue:@(AppEventTypeTouch) forKey:@"EventType"];
+    [dictionary setValue:@(AppEventTypeTap) forKey:@"EventType"];
     NSString *viewId = [self markForView:view];
     if(viewId.length > 0) {
       [dictionary setValue:viewId forKey:@"Id"];
