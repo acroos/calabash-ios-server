@@ -37,7 +37,7 @@ typedef enum
 @property(assign, nonatomic) double startTouchTime;
 @property(strong, nonatomic) NSMutableArray *items;
 @property(strong, nonatomic) Class lastTouch;
-@property(nonatomic) BOOL textEntered;
+@property(assign, nonatomic) BOOL textEntered;
 @property(strong, nonatomic) NSString *currentTextEntered;
 @property(strong, nonatomic) NSMutableDictionary *currentTextEvent;
 
