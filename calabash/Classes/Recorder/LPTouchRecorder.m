@@ -210,9 +210,9 @@
                    touch.timestamp - _startTouchTime < 0.7) {
           //Create Touch vertical swipe
           if (_startTouchPosition1.y < currentTouchPosition.y)
-            [touchEvent setValue:@(AppEventTypeScrollDown) forKey:@"EventType"];
-          else
             [touchEvent setValue:@(AppEventTypeScrollUp) forKey:@"EventType"];
+          else
+            [touchEvent setValue:@(AppEventTypeScrollDown) forKey:@"EventType"];
         } else {
           if (((double) touch.timestamp - _startTouchTime) > 1)
             [touchEvent setValue:@(AppEventTypeLongPress) forKey:@"EventType"];
