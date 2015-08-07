@@ -76,9 +76,7 @@
       [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
       [event setValue:@(AppEventTypeEnterText) forKey:@"EventType"];
       _currentTextEvent = event;
-      if ([textField hasText]) {
-        _textEntered = YES;
-      }
+      _textEntered = [textField hasText];
     } @catch(NSException *exception) {
         NSLog(@"Failed in text field change notification %@", exception.reason);
     }
@@ -310,11 +308,11 @@
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     [dictionary setValue:className forKey:@"ClassType"];
     [dictionary setValue:@(AppEventTypeTap) forKey:@"EventType"];
-    NSString *viewId = [self markForView:view];
+    NSString *viewId = [self idForView:view];
     if(viewId.length > 0) {
       [dictionary setValue:viewId forKey:@"Id"];
     }
-    NSString *marked = [self GetMarked:view];
+    NSString *marked = [self textForView:view];
     if(marked.length > 0) {
       [dictionary setValue:marked forKey:@"Text"];
     }
@@ -336,7 +334,7 @@
   }
 }
 
-- (NSString *) GetMarked: (UIView*) view
+- (NSString *) textForView: (UIView*) view
 {
   @try {
     NSString *name = [view accessibilityLabel];
@@ -368,29 +366,13 @@
   }
 }
 
-- (NSString *) markForView: (UIView*) view
+- (NSString *) idForView: (UIView*) view
 {
   @try {
     NSString *name = view.accessibilityIdentifier;
     if(name.length != 0)
       return name;
-    name = view.accessibilityLabel;
-    if(name.length != 0)
-      return name;
-    if([NSStringFromClass([view class]) isEqualToString:@"UITableViewCellContentView"])
-    {
-      UITableViewCell *cell = (UITableViewCell *)view.nextResponder;
-      name = view.accessibilityIdentifier;
-      if(name.length != 0)
-        return name;
-      name = cell.accessibilityLabel;
-      if(name.length != 0)
-        return name;
-      name = cell.textLabel.text;
-      if(name.length != 0)
-        return name;
-    }
-    return name;
+    return @"";
   }
   @catch (NSException *exception) {
     NSLog(@"CALABASH - %@", exception.reason);
