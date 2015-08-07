@@ -72,7 +72,7 @@
       CGPoint center = textField.center;
       _currentTextEntered = textField.text;
       NSMutableDictionary *event = [self CreateTouchEvent:textField withTapCount:0 atLocation:center];
-      [event setValue:textField.text forKey:@"Text"];
+      [event setValue:textField.text forKey:@"Data"];
       [event setValue:textField.accessibilityIdentifier forKey:@"Id"];
       [event setValue:@(AppEventTypeEnterText) forKey:@"EventType"];
       _currentTextEvent = event;
@@ -279,7 +279,7 @@
 
     NSString *marked = [viewController title];
     if(marked.length > 0) {
-      [dictionary setValue:marked forKey:@"Marked"];
+      [dictionary setValue:marked forKey:@"Data"];
     }
     
     return dictionary;
@@ -316,7 +316,7 @@
     }
     NSString *marked = [self GetMarked:view];
     if(marked.length > 0) {
-      [dictionary setValue:marked forKey:@"Marked"];
+      [dictionary setValue:marked forKey:@"Text"];
     }
     [dictionary setValue:@(tapcount) forKey:@"TapCount"];
     NSMutableDictionary *nextResponder = [self CreateTouchEvent:(UIView *)view.nextResponder withTapCount:tapcount atLocation:location];
